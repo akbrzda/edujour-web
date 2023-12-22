@@ -1,6 +1,9 @@
 <?php
 session_start();
-require_once '../config.php';
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+require_once '../db/config.php';
 
 $surname = addslashes($_POST['user_secname']);
 $name = addslashes($_POST['user_name']);
@@ -28,7 +31,7 @@ if ($_POST['user_password2'] <> $passwd) {
 }
 $passwd = SHA1(md5($passwd));
 $query = "Insert into users values
-('', '$name','$surname','$email','$passwd',CURRENT_DATE(),'$roleNum', '$studentGroup', '')";
+('', '$name','$surname','$email','$passwd','$roleNum', '$studentGroup', CURRENT_DATE())";
 $conn->exec($query);
 
 $_SESSION['login'] = $email;

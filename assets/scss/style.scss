@@ -8,6 +8,10 @@ body {
   background-color: $primaryBack;
   font-family: $primaryFont;
 }
+.user__avatar {
+    width: 128px;
+    border-radius: 32px;
+}
 .container {
   max-width: 1170px;
   padding: 0 15px;

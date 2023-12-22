@@ -21,6 +21,7 @@ if (!isset($_SESSION["login"])) {
       $password = Sha1(md5($password));
       if (!$res || $password <> $res['user_password']) {
         $_SESSION["error"] = 'Неверный логин или пароль!';
+        header('Location: login.php');
       } else {
         $_SESSION['login'] = $res['user_email'];
         header('Location: lk.php');
@@ -61,7 +62,7 @@ if (!isset($_SESSION["login"])) {
           <button class="btn btn-primary" type="submit" name="loginBtn" id="loginBtn">Вход</button>
         </form>
         <div class="signup-box">
-          <p>У Вас нет аккаунта? <a href="regQuery.php" id="signUp">Зарегистрироваться</a></p>
+          <p>У Вас нет аккаунта? <a href="registration.php" id="signUp">Зарегистрироваться</a></p>
         </div>
       </div>
     </div>

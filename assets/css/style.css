@@ -8,7 +8,10 @@
   vertical-align: baseline;
   background: transparent;
 }
-
+.user__avatar {
+    width: 128px;
+    border-radius: 32px;
+}
 ol,
 ul {
   list-style: none;

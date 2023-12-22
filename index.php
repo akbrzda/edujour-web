@@ -1,8 +1,8 @@
 <?php
-session_start();
-if (!isset($_SESSION['login'])) {
-     header('Location: login.php');
-} else {
-     header('Location: lk.php');
-}
+include "includes/header.php";
+include "includes/sidebar.php";
+?>
+
+<?
+include "includes/footer.php";
 ?>
